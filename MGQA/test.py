@@ -96,11 +96,6 @@ if __name__ == "__main__":
 
     torch.utils.backcompat.broadcast_warning.enabled = True
 
-    if args.database == 'LIVE-VQC':
-        features_dir = '/home/d310/10t/wl/VQA_Model/Backbone/tt/'   # ECO
-        # datainfo = '/home/d310/10t/wl/VQA_Model/VSFA/data/VQC.csv'
-        datainfo = '/home/d310/10t/wl/Videos_Data/LIVE-VQC/1.csv'
-  
 
     print('EXP ID: {}'.format(args.exp_id))
     print(args.database)
@@ -108,7 +103,8 @@ if __name__ == "__main__":
 
     device = torch.device("cuda" if not args.disable_gpu and torch.cuda.is_available() else "cpu")
 
-
+    if args.database == 'LIVE-VQC':
+        features_dir = '/home/d310/10t/wl/VQA_Model/Backbone/tt/'   # ECO
 
     pd_reader = pd.read_csv(datainfo)
     # print(pd_reader.get('video_name'))
@@ -142,7 +138,7 @@ if __name__ == "__main__":
     MSE_loss = torch.nn.L1Loss()
     
     
-    model.load_state_dict(torch.load('/home/d310/10t/wl/VQA_Model/Backbone/Result/VQC/model/LIVE-VQC-EXP2.pt'))  #
+    model.load_state_dict(torch.load('/home/d310/10t/wl/VQA_Model/Backbone/Result/VQC/model/LIVE-VQC-EXP0.pt'))  #
     model.eval()
     with torch.no_grad():
         y_pred = np.zeros(len(test_index))
@@ -164,7 +160,4 @@ if __name__ == "__main__":
     print(names)
     print('*******')
     print(y_pred)
-
-    # CUDA_VISIBLE_DEVICES=7 python train.py --database=KoNViD-1k
-
 
