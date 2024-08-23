@@ -14,10 +14,15 @@ In this part, the training and testing code is the same as VSFA(https://github.c
 CUDA_VISIBLE_DEVICES=0 python CNNfeatures.py --database=KoNViD-1k --frame_batch_size=64
 ```
 #### Quality prediction
+##### Training of VSFA model
 ```
 CUDA_VISIBLE_DEVICES=0 python VSFA.py --database=KoNViD-1k 
 ```
-
+or 
+##### Training of TransformerVSFA model
+```
+CUDA_VISIBLE_DEVICES=0 python TranVSFA_train.py --database=KoNViD-1k 
+```
 ### MGQA Experiments (Training and Evaluating)
 #### Feature extraction
 
@@ -41,9 +46,9 @@ You need to specify the `database` and `exp_id`.
 
 The model weights provided in `/model/LIVE-VQC-EXP0.pt'` are the saved weights when running of LIVE-VQC.
 ```
-python test.py --video_path=... ----model_path=...
+python test.py 
 ```
-
+You need to change these two parameters: '--video_path', and 'model_path'.
 ### Requirement
 ```bash
 conda create -n MGQA pip python=3.8
