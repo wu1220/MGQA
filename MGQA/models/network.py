@@ -16,7 +16,7 @@ class Reg_Domain(nn.Module):
         #     # print(key)
         #     p.requires_grad = False
 
-        self.domainlevelgraph = DomainLevelGragh(1000, do_emb_size, eg_emb_size, pretrain)
+        self.domainlevelgraph = DomainLevelGragh(8000, do_emb_size, eg_emb_size, pretrain)
 
         self.global_pool = nn.AdaptiveAvgPool2d((1, 1))
         # self.predictor = nn.Sequential(
@@ -24,7 +24,7 @@ class Reg_Domain(nn.Module):
         #     nn.ReLU(True),
         #     nn.Linear(2000, 1)
         #     )
-        self.hyperpredmos = HyperPred(1000 + eg_emb_size)
+        self.hyperpredmos = HyperPred(8000 + eg_emb_size)
 
         # self.classifier = nn.Linear(256, 25)
 
