@@ -58,8 +58,9 @@ class VideoDataset(Dataset):
         video_height = video_data.shape[1]
         video_width = video_data.shape[2]
         
-        # 时间采样
+        #  Temporal Sampling
         num = Temporl.ECO(video_data)
+        
         transformed_video = torch.zeros([len(num), video_channel,  video_height, video_width])
         for i, frame_idx in enumerate(num):
             frame = video_data[frame_idx]
@@ -118,7 +119,10 @@ def get_features(video_data, device='cuda'):
 
     with torch.no_grad(): 
         while frame_start < video_length:
+            #  Spatial Sampling
+            
             ten_num = Spatial.get_spatial_fragments_2_2(video_data[frame_start])
+            
             ten_num = ten_num.to(device) 
             # print(ten_num.shape)  # [3,3,32,32]
             if ten_num.shape[0] == 0:
