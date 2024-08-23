@@ -4,17 +4,25 @@
 code for the following papers:
 
 - Jiebin Yan, Lei Wu, Yuming Fang, Xuelin Liu, Xue Xia, Weide Liu. [Video Quality Assessment for Online Processing: From Spatial to Temporal Sampling](链接). 期刊名
-![Framework](https://github.com/wu1220/MGQA/blob/main/motive1.png)
+![Framework](https://github.com/wu1220/MGQA/blob/main/Framework.png)
 
 ### Evaluating
 In this part, the training and testing code is the same as VSFA(https://github.com/lidq92/VSFA), we only need to change the preprocessing part.
 
+#### Feature extraction
+```
+CUDA_VISIBLE_DEVICES=0 python CNNfeatures.py --database=KoNViD-1k --frame_batch_size=64
+```
+#### Quality prediction
+```
+CUDA_VISIBLE_DEVICES=0 python VSFA.py --database=KoNViD-1k 
+```
 
-### Intra-Database Experiments (Training and Evaluating)
+### MGQA Experiments (Training and Evaluating)
 #### Feature extraction
 
 ```
-CUDA_VISIBLE_DEVICES=0 python CNNfeatures.py --database=KoNViD-1k --frame_batch_size=64
+CUDA_VISIBLE_DEVICES=0 python  GetFeatures.py --database=KoNViD-1k --frame_batch_size=64
 ```
 
 You need to specify the `database` and change the corresponding `videos_dir`.
@@ -22,7 +30,7 @@ You need to specify the `database` and change the corresponding `videos_dir`.
 #### Quality prediction
 
 ```
-CUDA_VISIBLE_DEVICES=0 python VSFA.py --database=KoNViD-1k --exp_id=0
+CUDA_VISIBLE_DEVICES=0 python train.py --database=KoNViD-1k --exp_id=0
 ```
 
 You need to specify the `database` and `exp_id`.
@@ -30,9 +38,10 @@ You need to specify the `database` and `exp_id`.
 
 ### Test Demo
 
-The model weights provided in `models/VSFA.pt` are the saved weights when running the 9-th split of KoNViD-1k.
+
+The model weights provided in `/model/LIVE-VQC-EXP0.pt'` are the saved weights when running of LIVE-VQC.
 ```
-python test_demo.py --video_path=test.mp4
+python test.py --video_path=... ----model_path=...
 ```
 
 ### Requirement
