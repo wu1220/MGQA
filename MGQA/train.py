@@ -268,6 +268,3 @@ if __name__ == "__main__":
         logger.logger.info('Finally test result:PLCC: %.2f\n'%(PLCC))
         logger.logger.info('Finally test result:RMSE: %.2f\n'%(RMSE))
 
-        # CUDA_VISIBLE_DEVICES=7 python train.py --database=KoNViD-1k
-
-
