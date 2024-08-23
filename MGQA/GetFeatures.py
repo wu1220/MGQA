@@ -36,7 +36,7 @@ def get_features(video_data, device='cuda'):
     
     with torch.no_grad(): 
         while frame_start < video_length:
-            ten_num = Sample.get_spatial_fragments_2_2(video_data[frame_start])
+            ten_num = Sample.get_spatial_fragments_5_5(video_data[frame_start])
             ten_num = ten_num.to(device) 
             if ten_num.shape[0] == 0:
                 frame_start = frame_start + 1
