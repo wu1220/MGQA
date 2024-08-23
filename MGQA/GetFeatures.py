@@ -77,23 +77,7 @@ if __name__ == '__main__':
         features_dir = '/home/d310/10t/wl/VQA_Model/Backbone/222222/'  # features dir
         # datainfo = '/home/d310/10t/wl/VQA_Model/fuckvqa/data/KoNViD_1k/KoNViD_1k.csv'  # database info: v
         datainfo = '/home/d310/10t/wl/Videos_Data/KoNViD_1k_videos/1.csv'
-    # ideo_names, scores; video format, width, height, index, ref_ids, max_len, etc.
-    if args.database == 'CVD2014':
-        videos_dir = '/home/d310/10t/wl/Videos_Data/CVD2014/CVD2014/'
-        features_dir = '/home/d310/10t/wl/VQA_Model/Backbone/features/MobileNet_CVD2014/'
-        datainfo = '/home/d310/10t/wl/VQA_Model/VSFA/data/CVD2014info.mat'
-    if args.database == 'LIVE-Qualcomm':
-        videos_dir = '/home/d310/10t/wl/Videos_Data/LIVE-Qualcomm/Video/'
-        features_dir = '/home/d310/10t/wl/VQA_Model/Backbone/features/MobileNet_LIVE_Q/'
-        datainfo = '/home/d310/10t/wl/Videos_Data/LIVE-Qualcomm/LIVEQualcomm.csv'
-    if args.database == 'LIVE-VQC':
-        videos_dir = '/home/d310/10t/wl/Videos_Data/LIVE-VQC/Video/'
-        # features_dir = '/home/d310/10t/wl/VQA_Model/Backbone/tt/'
-        features_dir = '/home/d310/10t/wl/VQA_Model/Backbone/test/2_32_ECO/'
-        datainfo = '/home/d310/10t/wl/VQA_Model/VSFA/data/VQC.csv'
-        # datainfo = '/home/d310/10t/wl/Videos_Data/LIVE-VQC/1.csv'
     
-
 
     if not os.path.exists(features_dir):
         os.makedirs(features_dir)
