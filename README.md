@@ -1,5 +1,5 @@
 # Video Quality Assessment for Online Processing: From Spatial to Temporal Sampling
-[](License)
+
 ## Description
 VSFA code for the following papers:
 
@@ -66,3 +66,6 @@ Note: The codes can also be directly run on PyTorch 1.3.
 
 ### Contact
 Dingquan Li, dingquanli AT pku DOT edu DOT cn.
+
+### Licence
+You can use, redistribute, and adapt the material for non-commercial purposes, as long as you give appropriate credit by citing our paper and indicate any changes that you've made.
