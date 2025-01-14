@@ -3,7 +3,8 @@
 ## Description
 code for the following papers:
 
-- Jiebin Yan, Lei Wu, Yuming Fang, Xuelin Liu, Xue Xia, Weide Liu. [Video Quality Assessment for Online Processing: From Spatial to Temporal Sampling](https://ieeexplore.ieee.org/abstract/document/10648736)(https://arxiv.org/abs/2501.07087). in IEEE Transactions on Circuits and Systems for Video Technology, vol. 34, no. 12, pp. 13441-13451.
+- Jiebin Yan, Lei Wu, Yuming Fang, Xuelin Liu, Xue Xia, Weide Liu. [[Video Quality Assessment for Online Processing: From Spatial to Temporal Sampling](https://ieeexplore.ieee.org/abstract/document/10648736)(https://arxiv.org/abs/2501.07087). in IEEE Transactions on Circuits and Systems for Video Technology, vol. 34, no. 12, pp. 13441-13451.]
+- arXiv:[[Video Quality Assessment for Online Processing: From Spatial to Temporal Sampling]](https://github.com/wu1220/MGQA/edit/main/README.md)
 ![Framework](https://github.com/wu1220/MGQA/blob/main/Framework.png)
 
 ### Evaluating
